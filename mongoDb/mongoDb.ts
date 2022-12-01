@@ -3,7 +3,7 @@ import { Db, MongoClient } from "mongodb";
 const connectionString = process.env.DB_CONNECTIONSTRING as string;
 
 const client = new MongoClient(connectionString);
-let db: Db;
+export let db: Db;
 
 export const connect = async () => {
     await client.connect();

@@ -1,10 +1,10 @@
-import * as dotenv from "dotenv"
-import { bootstrap } from "./bootstrap";
+import express, { Application } from "express";
+import { studentRouter } from "./application/student/routes";
 
-dotenv.config();
+const app: Application = express();
 
-bootstrap(startUp);
+app.use(express.json());
 
-function startUp() {
-    console.log("Application is already started");
-}
+app.use("/api/students", studentRouter);
+
+export { app };
