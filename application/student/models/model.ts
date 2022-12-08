@@ -1,7 +1,10 @@
-import { Collection } from "mongodb";
 import { db } from "../../../mongoDb/mongoDb";
+import { studentSchema } from "../../../mongoDb/schema/student.schema";
 import { IStudent } from "../interface/student.interface";
 
 
-export const StudentCollection: Collection<IStudent> =
-    db.collection<IStudent>("students");
+export const StudentModel = db.model<IStudent>(
+    "students",
+    studentSchema,
+    "students"
+);
