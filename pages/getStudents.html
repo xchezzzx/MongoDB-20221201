@@ -12,12 +12,51 @@
             if(response.ok) {
                 let arraOfJson = await response.json();
                 console.log(arraOfJson);
+                return arraOfJson;
+            } else {
+                return [];
             }
         };
-        getStudent();
+        const handleData = async () => {
+            let studentsArray = await getStudent();
+            let html = [];
+            studentsArray.map((s) => {
+                html.push(`<h1> ${s.firstName} ## ${s.lastName} </h1>`);
+            })
+            console.log(html);
+            document.getElementById("studentsContainer").innerHTML = html.join("");
+        };
+
+        handleData();
     </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: steelblue;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .container h1 {
+            margin: 10px;
+            padding: 10px;
+            color: wheat;
+            border: 5px solid black;
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <div id="studentsContainer" class="container">
+
+    </div>
 </body>
 </html>
