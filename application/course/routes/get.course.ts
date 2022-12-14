@@ -1,11 +1,11 @@
 import { Router, Request, Response } from "express";
-import { getStudents } from "../service";
+import { getCourses } from "../service";
 
 const route = Router();
 
 route.get("/", async (req: Request, res: Response) => {
-    let result = await getStudents();
+    let result = await getCourses();
     res.send(result);
 });
 
-export { route as getStudentsRoute };
+export { route as getCoursesRoute };
