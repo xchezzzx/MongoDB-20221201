@@ -7,7 +7,7 @@ const courseSchema = new Schema({
 });
 
 const validateCourseName = (courseName: string) => {
-    return courseName && courseName.length > 2;
+    return courseName && courseName.length > 0;
 };
 
 courseSchema.path("courseName").validate(validateCourseName);

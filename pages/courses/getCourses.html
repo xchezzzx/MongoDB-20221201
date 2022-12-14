@@ -26,8 +26,8 @@
             coursesArray.map((s) => {
                 html.push(`<h3>${s.courseName}</h3>
                            <ul>
-                                <li>Mentor: ${s.mentor};</li>
-                                <li>Duration: ${s.duration} hours;</li>
+                                <li>Mentor: ${s.mentor}</li>
+                                <li>Duration: ${s.duration} hours</li>
                            </ul>`);
             })
             console.log(html);
@@ -49,17 +49,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
         }
 
         .container .output {
             width: 40%;
             font-size: x-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container .output h3 {
             margin: 10px 10px 10px 0px;
-            color:chocolate;
+            color:firebrick;
+        }
+
+        .container .output li {
+            list-style: square;
+            margin: 4px 0px;
+        }
+
+        .container .output ul {
+            border: solid firebrick;
+            border-width: 0px 0px 2px 0px;
         }
         
     </style>
