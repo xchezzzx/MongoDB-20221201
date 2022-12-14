@@ -72,6 +72,10 @@
             background-color: lightblue;
         }
 
+        .containerStudents .inputs {
+            width: 40%;
+        }
+
         .myInput {
             margin: 10px !important;
             padding: 6px 12px !important;
@@ -85,31 +89,34 @@
 <head>
 <body>
     <div class="containerStudents">
-        <input
-            id="firstName"
-            type="text"
-            class="myInput form-control"
-            placeholder="First Name"
-            aria-label="firstName"
-            aria-describedby
-        >
-        <input
-            id="lastName"
-            type="text"
-            class="myInput form-control"
-            placeholder="Last Name"
-            aria-label="firstName"
-            aria-describedby
-        >
-        <input
-            id="age"
-            type="text"
-            class="myInput form-control"
-            placeholder="Age"
-            aria-label="firstName"
-            aria-describedby
-        >
-        <button class="myButton btn btn-success" onclick="handleClick()">Add student</button>
+        <div class="inputs">
+            <input
+                id="firstName"
+                type="text"
+                class="myInput form-control"
+                placeholder="First Name"
+                aria-label="firstName"
+                aria-describedby
+            >
+            <input
+                id="lastName"
+                type="text"
+                class="myInput form-control"
+                placeholder="Last Name"
+                aria-label="firstName"
+                aria-describedby
+            >
+            <input
+                id="age"
+                type="text"
+                class="myInput form-control"
+                placeholder="Age"
+                aria-label="firstName"
+                aria-describedby
+            >
+            <button class="myButton btn btn-success" onclick="handleClick()">Add student</button>            
+        </div>
+
     </div>
 </body>
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get all courses page</title>
+
+    <script>
+        const getCourses = async () => {
+            let endpoint = "http://localhost:3000/api/courses";
+            let response = await fetch (endpoint);
+            if(response.ok) {
+                let arraOfJson = await response.json();
+                console.log(arraOfJson);
+                return arraOfJson;
+            }
+            else {
+                return[];
+            }
+        };
+
+        const handleData = async () => {
+            let coursesArray = await getCourses();
+            let html = [];
+            coursesArray.map((s) => {
+                html.push(`<h3>${s.courseName}</h3>
+                           <ul>
+                                <li>Mentor: ${s.mentor};</li>
+                                <li>Duration: ${s.duration} hours;</li>
+                           </ul>`);
+            })
+            console.log(html);
+            document.getElementById("coursesContainer").innerHTML = html.join("");
+        };
+
+        handleData();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .container .output {
+            width: 40%;
+            font-size: x-large;
+        }
+
+        .container .output h3 {
+            margin: 10px 10px 10px 0px;
+            color:chocolate;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="output" id="coursesContainer">
+            
+        </div>
+    </div>
+</body>
+</html>
