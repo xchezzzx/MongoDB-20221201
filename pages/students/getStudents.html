@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Get all students page</title>
     <script>
         const getStudent = async () => {
             let endpoint = "http://localhost:3000/api/students";
@@ -21,7 +21,7 @@
             let studentsArray = await getStudent();
             let html = [];
             studentsArray.map((s) => {
-                html.push(`<h1> -- ${s.firstName} -- ${s.lastName} @ ${s.age} -- </h1>`);
+                html.push(`<h1>${s.firstName} ${s.lastName} @ ${s.age}</h1>`);
             })
             console.log(html);
             document.getElementById("studentsContainer").innerHTML = html.join("");
@@ -40,7 +40,7 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             overflow: auto;
         }
@@ -48,8 +48,9 @@
         .container h1 {
             margin: 10px;
             padding: 10px;
-            color: wheat;
-            border: 5px solid black;
+            color:darkslategrey;
+            border: solid navy;
+            border-width: 0px 0px 4px 0px;
         }
         
     </style>
